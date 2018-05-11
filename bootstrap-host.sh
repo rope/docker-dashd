@@ -49,7 +49,7 @@ docker volume create --name=dashd-data
 docker run -v dashd-data:/dash --rm $DASH_IMAGE dash_init
 
 # Start dashd via upstart and docker
-curl https://raw.githubusercontent.com/dashpay/docker-dashd/master/upstart.init > /etc/init/docker-dashd.conf
+curl https://raw.githubusercontent.com/rope/docker-dashd/master/upstart.init > /etc/init/docker-dashd.conf
 start docker-dashd
 
 set +ex

@@ -28,12 +28,6 @@ RUN chmod a+x /usr/local/bin/*
 # http://get.docker.io/ubuntu works fine also and seems simpler.
 USER dash
 
-
-# create data directory (as seen in bitcoin repo, also check datadir)
-ENV DASH_DATA /dash
-#   && ln -sfn "$BITCOIN_DATA" /home/bitcoin/.bitcoin \
-RUN mkdir "$DASH_DATA" \
-    && chown -R dash:dash "$DASH_DATA"
 VOLUME ["/dash"]
 
 EXPOSE 9998 9999 19998 19999 28332
